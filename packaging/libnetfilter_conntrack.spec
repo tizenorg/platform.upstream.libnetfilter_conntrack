@@ -9,10 +9,7 @@ Group:          Productivity/Networking/Security
 #Git-Clone:	git://git.netfilter.org/libnetfilter_conntrack
 #DL-URL:	http://netfilter.org/projects/libnetfilter_conntrack/files/
 Source:         http://netfilter.org/projects/libnetfilter_conntrack/files/%name-%version.tar.bz2
-Source2:        http://netfilter.org/projects/libnetfilter_conntrack/files/%name-%version.tar.bz2.sig
-Source3:        baselibs.conf
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-#git#BuildRequires:  autoconf, automake >= 1.6, libtool
+Source2:        baselibs.conf
 BuildRequires:  pkgconfig >= 0.21
 BuildRequires:  pkgconfig(libmnl) >= 1.0.3
 BuildRequires:  pkgconfig(libnfnetlink) >= 1.0.0
