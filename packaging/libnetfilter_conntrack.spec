@@ -25,7 +25,7 @@ libnfnetlink_conntrack and libctnetlink. This library is currently
 used by conntrack-tools among many other applications.
 
 %package devel
-Requires:       %lname = %version
+Requires:       %name = %version
 Summary:        Userspace library for the in-kernel connection tracking state table
 Group:          Development/Libraries/C and C++
 
