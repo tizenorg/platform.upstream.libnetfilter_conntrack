@@ -52,6 +52,7 @@ make %{?_smp_mflags}
 
 %files 
 %defattr(-,root,root)
+%license COPYING
 %_libdir/libnetfilter_conntrack.so.3*
 
 %files devel
