@@ -10,6 +10,7 @@ Group:          Productivity/Networking/Security
 #DL-URL:	http://netfilter.org/projects/libnetfilter_conntrack/files/
 Source:         http://netfilter.org/projects/libnetfilter_conntrack/files/%name-%version.tar.bz2
 Source2:        baselibs.conf
+Source1001: 	libnetfilter_conntrack.manifest
 BuildRequires:  pkgconfig >= 0.21
 BuildRequires:  pkgconfig(libmnl) >= 1.0.3
 BuildRequires:  pkgconfig(libnfnetlink) >= 1.0.0
@@ -35,6 +36,7 @@ used by conntrack-tools among many other applications.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 if [ "%git_snapshot" -ne 0 ] || [ ! -e configure ]; then
@@ -51,10 +53,12 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files 
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %_libdir/libnetfilter_conntrack.so.3*
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %_includedir/%name-%version
 %_libdir/libnetfilter_conntrack.so
